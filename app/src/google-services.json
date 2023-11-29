@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1032606518533",
+    "project_id": "llamalogue-e2981",
+    "storage_bucket": "llamalogue-e2981.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032606518533:android:675dd5bcb00380a0d5fb6c",
+        "android_client_info": {
+          "package_name": "com.cs407.llamalogue"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWcNTEfC8BTl1nzYj2pe1IaEcIuXEmlkM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
