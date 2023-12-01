@@ -21,19 +21,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/loginUnameInput" />
+        app:layout_constraintBottom_toTopOf="@+id/loginEmailInput" />
 
     <!-- Username Input -->
     <EditText
-        android:id="@+id/loginUnameInput"
+        android:id="@+id/loginEmailInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/loginPassInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintBottom_toTopOf="@+id/loginPassInput" />
+        app:layout_constraintTop_toBottomOf="@id/titleText" />
 
     <!-- Password Input -->
     <EditText
@@ -44,7 +44,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loginUnameInput"
+        app:layout_constraintTop_toBottomOf="@id/loginEmailInput"
         app:layout_constraintBottom_toTopOf="@+id/forgotPassRedirect" />
 
     <!-- Forgot Password Text -->
