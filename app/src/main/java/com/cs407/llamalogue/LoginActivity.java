@@ -3,6 +3,7 @@ package com.cs407.llamalogue;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,16 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "EmailPassword";
     private FirebaseAuth mAuth;
+
+    public void goToSignUpActivity(){
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+    public void goToForgotPassActivity(){
+        Intent intent = new Intent(this, ForgotPasswordActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +40,15 @@ public class LoginActivity extends AppCompatActivity {
         signupRedirect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Set up intent
+                goToSignUpActivity();
+            }
+        });
+
+        TextView forgotPassRedirect = findViewById(R.id.forgotPassRedirect);
+        forgotPassRedirect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToForgotPassActivity();
             }
         });
 
