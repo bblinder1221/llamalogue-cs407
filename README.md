@@ -20,3 +20,4 @@ Jennie Vuong - jvuong@wisc.edu - vuongjennie
 
 # Citations
 * https://developer.android.com/training/volley/request
+* https://developer.android.com/reference/java/net/HttpURLConnection
