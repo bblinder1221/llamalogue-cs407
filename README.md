@@ -16,3 +16,7 @@ Jennie Vuong - jvuong@wisc.edu - vuongjennie
 - #ccc698
 - #73c1e2
 - #53bc6a
+
+
+# Citations
+* https://developer.android.com/training/volley/request

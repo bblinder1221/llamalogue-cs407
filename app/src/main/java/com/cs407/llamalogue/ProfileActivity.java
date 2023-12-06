@@ -2,10 +2,15 @@ package com.cs407.llamalogue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
 public class ProfileActivity extends AppCompatActivity {
+    void changeIntent() {
+        Intent intent = new Intent(this, ChatActivity.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
                 new LlamaProfile(3, "Llama 4"),
         };
 
-        LlamaProfileAdapter adapter = new LlamaProfileAdapter(this, llamas);
+        LlamaProfileAdapter adapter = new LlamaProfileAdapter(this, llamas, () -> changeIntent());
 
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);

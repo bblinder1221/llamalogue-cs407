@@ -78,14 +78,14 @@
         android:orientation="horizontal">
 
         <!-- Llama Avatar -->
-        <ImageView
-            android:id="@+id/llama_avatar_header"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:layout_margin="10dp"
-            app:layout_constraintDimensionRatio="H, 1:1"
-            android:src="@tools:sample/avatars" />
+<!--        <ImageView-->
+<!--            android:id="@+id/llama_avatar_header"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_margin="10dp"-->
+<!--            app:layout_constraintDimensionRatio="H, 1:1"-->
+<!--            android:src="@tools:sample/avatars" />-->
 
         <!-- Llama Name -->
         <TextView
