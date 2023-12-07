@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1b1b1b"
     tools:context=".ChatActivity">
 
     <!-- Bottom Text Bar -->
@@ -12,19 +13,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#113d38"
         android:orientation="horizontal">
 
         <!-- Message text box -->
         <EditText
             android:id="@+id/et_message"
-            android:inputType="textShortMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight=".5"
             android:background="@drawable/round_button"
-            android:backgroundTint="@android:color/white"
+            android:backgroundTint="#53bc6a"
             android:hint="Type a message..."
+            android:inputType="textShortMessage"
             android:padding="10dp"
             android:singleLine="true" />
 
@@ -35,8 +37,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:background="@drawable/round_button"
-            android:backgroundTint="#26A69A"
+            android:backgroundTint="#d54586"
             android:text="Send"
             android:textColor="@android:color/white" />
 
@@ -47,8 +48,8 @@
         android:id="@+id/text_bar_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/background_dark"
-        android:layout_above="@+id/text_bar"/>
+        android:layout_above="@+id/text_bar"
+        android:background="@android:color/background_dark" />
 
     <!-- Recycler View for messages -->
     <androidx.recyclerview.widget.RecyclerView
@@ -65,8 +66,8 @@
         android:id="@+id/header_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/background_dark"
-        android:layout_below="@+id/header"/>
+        android:layout_below="@+id/header"
+        android:background="@android:color/background_dark" />
 
     <!-- Header -->
     <LinearLayout
@@ -74,18 +75,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="#53bc6a"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <!-- Llama Avatar -->
-<!--        <ImageView-->
-<!--            android:id="@+id/llama_avatar_header"-->
-<!--            android:layout_width="60dp"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_margin="10dp"-->
-<!--            app:layout_constraintDimensionRatio="H, 1:1"-->
-<!--            android:src="@tools:sample/avatars" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/llama_avatar_header"-->
+        <!--            android:layout_width="60dp"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:layout_margin="10dp"-->
+        <!--            app:layout_constraintDimensionRatio="H, 1:1"-->
+        <!--            android:src="@tools:sample/avatars" />-->
 
         <!-- Llama Name -->
         <TextView
@@ -94,9 +96,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="cursive"
-            android:text="Llama Name"
             android:padding="10dp"
-            android:textColor="#6200EA"
+            android:text="Llama Name"
+            android:textColor="#113d38"
             android:textSize="42sp"
             android:textStyle="bold" />
 
@@ -106,9 +108,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:padding="10dp"
+            android:backgroundTint="#ccc698"
 
-            android:text="Sign Out" />
+            android:padding="10dp"
+            android:text="Sign Out"
+            android:textColor="#1b1b1b" />
 
     </LinearLayout>
 
