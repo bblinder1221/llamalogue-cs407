@@ -56,10 +56,11 @@ public class SignUpActivity extends AppCompatActivity {
                         || password.getText().toString().length()==0
                         || confPass.getText().toString().length()==0){
                     //handle missing input
-                } else if (password.getText().toString() != confPass.getText().toString()) {
+                } else if (!password.getText().toString().equals(confPass.getText().toString())) {
                     //handle conf password being different
                 } else{
                     createAccount(email.getText().toString(), password.getText().toString());
+                    goToActivity();
                 }
             }
         });
