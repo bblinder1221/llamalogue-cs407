@@ -95,9 +95,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:fontFamily="cursive"
+            android:fontFamily="@font/petit_formal_script"
             android:padding="10dp"
-            android:text="Llama Name"
+            android:text="Llama"
             android:textColor="#113d38"
             android:textSize="42sp"
             android:textStyle="bold" />
