@@ -21,3 +21,6 @@ Jennie Vuong - jvuong@wisc.edu - vuongjennie
 # Citations
 * https://developer.android.com/training/volley/request
 * https://developer.android.com/reference/java/net/HttpURLConnection
+* https://developer.android.com/reference/java/io/BufferedOutputStream
+* https://developer.android.com/reference/java/io/InputStream
+* https://developer.android.com/reference/androidx/recyclerview/widget/ListAdapter

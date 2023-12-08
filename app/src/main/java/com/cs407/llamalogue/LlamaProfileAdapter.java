@@ -13,16 +13,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-interface ChangeIntent {
-    void changeIntent();
+interface ChangeActivity {
+    void changeActivity();
 }
 
 public class LlamaProfileAdapter extends ArrayAdapter<LlamaProfile> {
-    ChangeIntent changeIntent;
+    ChangeActivity changeActivity;
 
-    LlamaProfileAdapter(Activity context, LlamaProfile[] llamas, ChangeIntent changeIntent) {
+    LlamaProfileAdapter(Activity context, LlamaProfile[] llamas, ChangeActivity changeIntent) {
         super(context, R.layout.llama_profile, llamas);
-        this.changeIntent = changeIntent;
+        this.changeActivity = changeIntent;
     }
 
     @NonNull
@@ -45,7 +45,7 @@ public class LlamaProfileAdapter extends ArrayAdapter<LlamaProfile> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                changeIntent.changeIntent();
+                changeActivity.changeActivity();
             }
         });
 

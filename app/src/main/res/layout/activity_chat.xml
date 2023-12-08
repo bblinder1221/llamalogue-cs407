@@ -52,14 +52,12 @@
         android:background="@android:color/background_dark" />
 
     <!-- Recycler View for messages -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_messages"
+    <ListView
+        android:id="@+id/messages"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/text_bar_divider"
-        android:layout_below="@+id/header_divider"
-        tools:itemCount="20"
-        tools:listitem="@layout/message_item" />
+        android:layout_above="@id/text_bar"
+        android:layout_below="@id/header" />
 
     <!-- Header Divider -->
     <View

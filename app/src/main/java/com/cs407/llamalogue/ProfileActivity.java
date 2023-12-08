@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 public class ProfileActivity extends AppCompatActivity {
-    void changeIntent() {
+    void changeActivity() {
         Intent intent = new Intent(this, ChatActivity.class);
         startActivity(intent);
     }
@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
                 new LlamaProfile(3, "Llama 4"),
         };
 
-        LlamaProfileAdapter adapter = new LlamaProfileAdapter(this, llamas, () -> changeIntent());
+        LlamaProfileAdapter adapter = new LlamaProfileAdapter(this, llamas, () -> changeActivity());
 
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
