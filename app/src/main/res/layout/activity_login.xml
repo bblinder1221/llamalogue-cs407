@@ -16,7 +16,7 @@
         android:fontFamily="@font/petit_formal_script"
         android:text="Llamalogue"
         android:textColor="#53bc6a"
-        android:textSize="48sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/loginEmailInput"
         app:layout_constraintEnd_toEndOf="parent"

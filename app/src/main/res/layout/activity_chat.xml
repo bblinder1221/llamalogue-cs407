@@ -88,26 +88,27 @@
         <!-- Llama Name -->
         <TextView
             android:id="@+id/llama_name_header"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:fontFamily="@font/petit_formal_script"
             android:padding="10dp"
             android:text="Llama"
             android:textColor="#113d38"
-            android:textSize="42sp"
+            android:textSize="36sp"
             android:textStyle="bold" />
 
         <!-- Sign out Button -->
         <Button
             android:id="@+id/sign_out_Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
             android:backgroundTint="#ccc698"
 
-            android:padding="10dp"
+            android:padding="1dp"
             android:text="Sign Out"
+            android:textSize="10dp"
             android:textColor="#1b1b1b" />
 
     </LinearLayout>

@@ -21,10 +21,10 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         LlamaProfile[] llamas = {
-                new LlamaProfile(0, "Default", "happy_llama.jpg", ""),
-                new LlamaProfile(1, "Sports", "jock_llama.jpg", "Pretend you are a jock"),
+                new LlamaProfile(0, "Happy", "happy_llama.jpg", ""),
+                new LlamaProfile(1, "Sporty", "jock_llama.jpg", "Pretend you are a jock"),
                 new LlamaProfile(2, "Emo", "emo_llama.jpg", "Pretend you are an emo person but are not sad"),
-                new LlamaProfile(3, "Evil", "evil_llama.jpg", "Give the exact opposite answer"),
+                new LlamaProfile(3, "Evil", "evil_llama.jpg", "Pretend you are evil and don't give the right answer"),
         };
 
         LlamaProfileAdapter adapter = new LlamaProfileAdapter(this, llamas, (LlamaProfile profile) -> changeActivity(profile));
