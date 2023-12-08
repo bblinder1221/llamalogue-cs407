@@ -36,10 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void goToProfileActvity() {
-        Intent intent = new Intent(this, ProfileActivity.class);
-        startActivity(intent);
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,12 +58,12 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         mAuth = FirebaseAuth.getInstance();
-        Button loginButton = findViewById(R.id.loginButton);
+        Button signupButton = findViewById(R.id.loginButton);
         TextView email = findViewById(R.id.loginEmailInput);
         TextView password = findViewById(R.id.loginPassInput);
 
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -102,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             goToProfileActivity();
                             //updateUI(user);
-                            goToProfileActvity();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
