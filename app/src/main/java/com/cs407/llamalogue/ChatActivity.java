@@ -2,12 +2,15 @@ package com.cs407.llamalogue;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,8 +31,12 @@ import java.util.List;
 public class ChatActivity extends AppCompatActivity {
     ChatAdapter chatAdapter;
     List<Message> messages = new ArrayList<>();
+    String name;
+    String systemPrompt;
+    String imgSrc;
 
     class PostTask extends AsyncTask<String, Void, String> {
+        Message thinking = new Message("...", 1);
 
         private String makeRequest(String data) {
             String urlString = "https://llama-logue.netlify.app/api/prompt";
@@ -73,16 +80,24 @@ public class ChatActivity extends AppCompatActivity {
         }
 
         @Override
+        protected void onPreExecute() {
+            chatAdapter.add(thinking);
+        }
+
+        @Override
         protected String doInBackground(String... params) {
             return makeRequest(params[0]);
         }
 
         @Override
         protected void onPostExecute(String result) {
+            chatAdapter.remove(thinking);
             Message msg = new Message(result, 1);
 
             chatAdapter.add(msg);
             chatAdapter.notifyDataSetChanged();
+
+            System.out.println(msg.text);
         }
     }
 
@@ -91,15 +106,53 @@ public class ChatActivity extends AppCompatActivity {
             return;
         }
 
-        String data = "{\"prompt\": \"" + promptText + "\", \"system_prompt\": \"\"}";
+        String data = "{\"prompt\": \"" + promptText + "\", \"system_prompt\": \"" + systemPrompt + "\"}";
         PostTask postTask = new PostTask();
         postTask.execute(data);
+    }
+
+    private void changeActivity() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        Intent intent = getIntent();
+
+        name = intent.getStringExtra("name");
+        systemPrompt = intent.getStringExtra("system_prompt");
+        imgSrc = intent.getStringExtra("imgSrc");
+
+        TextView textView = findViewById(R.id.llama_name_header);
+        textView.setText(name);
+
+        ImageView imageView = findViewById(R.id.llama_avatar_header);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeActivity();
+            }
+        });
+
+        switch (imgSrc) {
+            case "jock_llama.jpg":
+                imageView.setImageResource(R.drawable.jock_llama);
+                break;
+            case "emo_llama.jpg":
+                imageView.setImageResource(R.drawable.emo_llama);
+                break;
+            case "evil_llama.jpg":
+                imageView.setImageResource(R.drawable.evil_llama);
+                break;
+            default:
+                imageView.setImageResource(R.drawable.happy_llama);
+                break;
+        }
 
         chatAdapter = new ChatAdapter(this, messages);
 
@@ -122,6 +175,8 @@ public class ChatActivity extends AppCompatActivity {
                 chatAdapter.notifyDataSetChanged();
 
                 runPrompt(promptText);
+
+                prompt.setText("");
             }
         });
     }
