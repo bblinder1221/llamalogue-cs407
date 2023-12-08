@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +36,7 @@ public class ChatActivity extends AppCompatActivity {
     String name;
     String systemPrompt;
     String imgSrc;
+    private FirebaseAuth mAuth;
 
     class PostTask extends AsyncTask<String, Void, String> {
         Message thinking = new Message("...", 1);
@@ -116,10 +119,17 @@ public class ChatActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void goToLogin() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        mAuth = FirebaseAuth.getInstance();
 
         Intent intent = getIntent();
 
@@ -177,6 +187,15 @@ public class ChatActivity extends AppCompatActivity {
                 runPrompt(promptText);
 
                 prompt.setText("");
+            }
+        });
+
+        Button signout = findViewById(R.id.sign_out_Button);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                goToLogin();
             }
         });
     }
