@@ -95,12 +95,16 @@ public class ChatActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             chatAdapter.remove(thinking);
-            Message msg = new Message(result, 1);
+
+            String finalResult = result;
+            if (result.lastIndexOf(".") != -1) {
+                finalResult = result.substring(0, result.lastIndexOf(".") + 1);
+            }
+
+            Message msg = new Message(finalResult, 1);
 
             chatAdapter.add(msg);
             chatAdapter.notifyDataSetChanged();
-
-            System.out.println(msg.text);
         }
     }
 
