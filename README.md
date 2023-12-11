@@ -19,6 +19,7 @@ Jennie Vuong - jvuong@wisc.edu - vuongjennie
 
 
 # Citations
+* https://replicate.com/docs/get-started/nodejs
 * https://developer.android.com/training/volley/request
 * https://developer.android.com/reference/java/net/HttpURLConnection
 * https://developer.android.com/reference/java/io/BufferedOutputStream
