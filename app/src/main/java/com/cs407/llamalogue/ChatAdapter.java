@@ -48,6 +48,10 @@ public class ChatAdapter extends ArrayAdapter<Message> {
             }
         }
 
+        else {
+            System.out.println("NULL");
+        }
+
         return convertView;
     }
 }

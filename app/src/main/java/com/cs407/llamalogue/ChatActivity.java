@@ -105,6 +105,15 @@ public class ChatActivity extends AppCompatActivity {
 
             chatAdapter.add(msg);
             chatAdapter.notifyDataSetChanged();
+
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Button send = findViewById(R.id.btn_send);
+                    send.setEnabled(true);
+                }
+            });
         }
     }
 
@@ -178,6 +187,7 @@ public class ChatActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                send.setEnabled(false);
                 String promptText = prompt.getText().toString();
                 if (promptText.isEmpty()) {
                     return;
