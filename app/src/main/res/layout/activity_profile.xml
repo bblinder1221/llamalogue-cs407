@@ -54,7 +54,7 @@
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Every Llama has their own personality! Choose 1 and see what they’re all about. "
+        android:text="Every Llama has their own personality! Choose one and see what they’re all about. "
         android:textAlignment="center"
         android:textColor="@android:color/white" />
 

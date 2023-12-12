@@ -26,10 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
-    public void goToForgotPassActivity(){
-        Intent intent = new Intent(this, ForgotPasswordActivity.class);
-        startActivity(intent);
-    }
 
     public void goToProfileActivity(){
         Intent intent = new Intent(this, ProfileActivity.class);
@@ -46,14 +42,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToSignUpActivity();
-            }
-        });
-
-        TextView forgotPassRedirect = findViewById(R.id.forgotPassRedirect);
-        forgotPassRedirect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToForgotPassActivity();
             }
         });
 
